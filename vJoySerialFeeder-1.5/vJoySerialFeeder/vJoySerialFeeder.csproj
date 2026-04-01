@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{9C8FF460-8AAE-4BBB-B365-0D67C6016A0D}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>vJoySerialFeeder</RootNamespace>
+    <AssemblyName>vJoySerialFeeder</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkProfile />
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <ApplicationIcon>Joystick-icon.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\windows\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <BaseIntermediateOutputPath>obj\windows\</BaseIntermediateOutputPath>
+    <OutputPath>bin\windows\$(Configuration)</OutputPath>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>Lib\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MoonSharp.Interpreter">
+      <HintPath>Lib\MoonSharp.Interpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="vJoyInterfaceWrap">
+      <HintPath>Lib\vJoyInterfaceWrap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs" />
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="ImportConfigurationForm.cs" />
+    <Compile Include="ImportConfigurationForm.Designer.cs">
+      <DependentUpon>ImportConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormWorker.cs" />
+    <Compile Include="Mappings\AxisMapping.cs" />
+    <Compile Include="Mappings\AxisSetupForm.cs" />
+    <Compile Include="Mappings\AxisSetupForm.Designer.cs">
+      <DependentUpon>AxisSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mappings\ButtonBitmapMapping.cs" />
+    <Compile Include="Mappings\ButtonBitmapSetupForm.cs" />
+    <Compile Include="Mappings\ButtonBitmapSetupForm.Designer.cs">
+      <DependentUpon>ButtonBitmapSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mappings\ButtonMapping.cs" />
+    <Compile Include="Mappings\ButtonSetupForm.cs" />
+    <Compile Include="Mappings\ButtonSetupForm.Designer.cs">
+      <DependentUpon>ButtonSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mappings\Mapping.cs" />
+    <Compile Include="GlobalOptionsForm.cs" />
+    <Compile Include="GlobalOptionsForm.Designer.cs">
+      <DependentUpon>GlobalOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mappings\TriggerState.cs" />
+    <Compile Include="MonitorForm.cs" />
+    <Compile Include="MonitorForm.Designer.cs">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessInteraction\ComAutomation.cs" />
+    <Compile Include="ProcessInteraction\WebSocket.cs" />
+    <Compile Include="ProfileOptions.cs" />
+    <Compile Include="ProfileOptions.Designer.cs">
+      <DependentUpon>ProfileOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="PortSetupForm.cs" />
+    <Compile Include="PortSetupForm.Designer.cs">
+      <DependentUpon>PortSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripting\Lua.cs" />
+    <Compile Include="Scripting\LuaEditorForm.cs" />
+    <Compile Include="Scripting\LuaEditorForm.Designer.cs">
+      <DependentUpon>LuaEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scripting\LuaOutputForm.cs" />
+    <Compile Include="Scripting\LuaOutputForm.Designer.cs">
+      <DependentUpon>LuaOutputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerialProtocols\DsmReader.cs" />
+    <Compile Include="SerialProtocols\DummyReader.cs" />
+    <Compile Include="SerialProtocols\DummySetupForm.cs" />
+    <Compile Include="SerialProtocols\DummySetupForm.Designer.cs">
+      <DependentUpon>DummySetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerialProtocols\IbusReader.cs" />
+    <Compile Include="SerialProtocols\IbusSetupForm.cs" />
+    <Compile Include="SerialProtocols\IbusSetupForm.Designer.cs">
+      <DependentUpon>IbusSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerialProtocols\KissReader.cs" />
+    <Compile Include="SerialProtocols\KissSetupForm.cs" />
+    <Compile Include="SerialProtocols\KissSetupForm.Designer.cs">
+      <DependentUpon>KissSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerialProtocols\MultiWiiReader.cs" />
+    <Compile Include="SerialProtocols\MultiWiiSetupForm.cs" />
+    <Compile Include="SerialProtocols\MultiWiiSetupForm.Designer.cs">
+      <DependentUpon>MultiWiiSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerialProtocols\SbusReader.cs" />
+    <Compile Include="SerialProtocols\SbusSetupForm.cs" />
+    <Compile Include="SerialProtocols\SbusSetupForm.Designer.cs">
+      <DependentUpon>SbusSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerialProtocols\SerialReader.cs" />
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="VirtualJoysticks\VJoyBase.cs" />
+    <Compile Include="VirtualJoysticks\VJoyCollectionBase.cs" />
+    <Compile Include="VirtualJoysticks\VJoyCollectionWindows.cs" />
+    <Compile Include="VirtualJoysticks\VJoyNone.cs" />
+    <Compile Include="VirtualJoysticks\VJoyVJoy.cs" />
+    <Compile Include="VirtualJoysticks\VJoyVXBox.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportConfigurationForm.resx">
+      <DependentUpon>ImportConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\AxisSetupForm.resx">
+      <DependentUpon>AxisSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ButtonBitmapSetupForm.resx">
+      <DependentUpon>ButtonBitmapSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ButtonSetupForm.resx">
+      <DependentUpon>ButtonSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonitorForm.resx">
+      <DependentUpon>MonitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalOptionsForm.resx">
+      <DependentUpon>GlobalOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfileOptions.resx">
+      <DependentUpon>ProfileOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortSetupForm.resx">
+      <DependentUpon>PortSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripting\LuaEditorForm.resx">
+      <DependentUpon>LuaEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripting\LuaOutputForm.resx">
+      <DependentUpon>LuaOutputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialProtocols\DummySetupForm.resx">
+      <DependentUpon>DummySetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialProtocols\IbusSetupForm.resx">
+      <DependentUpon>IbusSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialProtocols\KissSetupForm.resx">
+      <DependentUpon>KissSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialProtocols\MultiWiiSetupForm.resx">
+      <DependentUpon>MultiWiiSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialProtocols\SbusSetupForm.resx">
+      <DependentUpon>SbusSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ContentWithTargetPath Include="Lib\vJoy2.1.9\vJoyInterface.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>vJoyInterface.dll</TargetPath>
+    </ContentWithTargetPath>
+    <ContentWithTargetPath Include="Lib\vXboxInterface.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>vXboxInterface.dll</TargetPath>
+    </ContentWithTargetPath>
+    <ContentWithTargetPath Include="Lib\msvcp120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>msvcp120.dll</TargetPath>
+    </ContentWithTargetPath>
+    <ContentWithTargetPath Include="Lib\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>msvcr120.dll</TargetPath>
+    </ContentWithTargetPath>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mappings" />
+    <Folder Include="ProcessInteraction" />
+    <Folder Include="Scripting" />
+    <Folder Include="SerialProtocols" />
+    <Folder Include="VirtualJoysticks" />
+    <Folder Include="VirtualJoysticks" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
