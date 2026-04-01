@@ -2,7 +2,7 @@ El sistema permite el control remoto de actuadores (como servos o robots) median
 
 ---
 
-## Imgágenes
+## Imágenes
 
 ![](img4.jpg)
 ![](img1.jpg)
@@ -51,7 +51,7 @@ El módulo nRF24L01 opera en la banda de 2.4 GHz con tasas de hasta 2 Mbps y alc
 ### Receptor
 - Arduino (Uno / Nano / Pro Mini)
 - Módulo nRF24L01
-- Servo motor / sistema controlado
+- Servo motor / Motor paso a paso (ver [Proyecto de Microcontroladores](https://github.com/emaa877/Microcontroladores)
 
 ---
 
